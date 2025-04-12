@@ -6,6 +6,8 @@ import taskRoutes from "./routes/taskRoutes.js";
 import classRoutes from "./routes/classRoutes.js";
 import examRoutes from "./routes/examRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import studyBehaviorRoutes from "./routes/studyBehaviorRoutes.js";
+import pomodoroRoutes from "./routes/pomodoroRoutes.js";
 
 dotenv.config();
 
@@ -20,6 +22,8 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/classes", classRoutes);
 app.use("/api/exams", examRoutes);
 app.use("/api/dashboard-stats", dashboardRoutes);
+app.use("/api/study-behavior", studyBehaviorRoutes);
+app.use("/api/pomodoro", pomodoroRoutes);
 
 // Connect to MongoDB
 mongoose
