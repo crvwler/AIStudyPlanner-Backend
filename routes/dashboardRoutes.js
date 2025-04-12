@@ -13,10 +13,12 @@ router.get("/", async (req, res) => {
     const next7Days = new Date(today);
     next7Days.setDate(today.getDate() + 7);
 
+    // Fetch tasks, classes, and exams
     const tasks = await Task.find();
-    const classes = await Class.find();
+    const classes = await Class.find().populate("tasksDue");
     const exams = await Exam.find();
 
+    // Construct stats object
     const stats = {
       today: {
         classes: classes.filter(
